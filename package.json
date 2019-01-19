@@ -2,7 +2,7 @@
   "name": "practice-oreo",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://uitspitss.github.io./practice-oreo",
+  "homepage": "https://uitspitss.github.io/practice-oreo",
   "dependencies": {
     "gh-pages": "^2.0.1",
     "lint-staged": "^8.1.0",
