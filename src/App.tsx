@@ -14,6 +14,10 @@ const App: React.SFC<{}> = () => (
       <Header as="h1" color="teal" textAlign="center" style={{ fontSize: 36 }}>
         O***RE***O Maker
       </Header>
+      <p style={{ fontSize: 18, textAlign: 'center' }}>
+        * Original illustrations were drawn by{' '}
+        <a href="https://twitter.com/773O3">@773O3</a>
+      </p>
       <Oreo />
     </Container>
   </>
