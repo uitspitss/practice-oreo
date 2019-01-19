@@ -1,0 +1,87 @@
+{
+  "name": "practice-oreo",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "http://uitspitss.github.io./practice-oreo",
+  "dependencies": {
+    "gh-pages": "^2.0.1",
+    "lint-staged": "^8.1.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-helmet": "^5.2.0",
+    "react-redux": "^6.0.0",
+    "react-scripts-ts": "3.1.0",
+    "react-svg": "^7.2.3",
+    "recompose": "^0.30.0",
+    "redux": "^4.0.1",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.84.0",
+    "styled-components": "^4.1.3",
+    "typescript-fsa": "^3.0.0-beta-2",
+    "typescript-fsa-reducers": "^1.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject",
+    "precommit": "lint-staged",
+    "lint": "tslint --project ./ 'src/**/*.{ts,tsx}'; stylelint 'src/**/*.css'",
+    "tslint-check": "tslint-config-prettier-check ./tslint.json",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.12",
+    "@types/node": "^10.12.18",
+    "@types/react": "^16.7.18",
+    "@types/react-dom": "^16.0.11",
+    "@types/react-helmet": "^5.0.8",
+    "@types/react-redux": "^6.0.12",
+    "@types/recompose": "^0.30.2",
+    "@types/styled-components": "^4.1.5",
+    "postcss": "^7.0.11",
+    "postcss-syntax": "^0.36.2",
+    "prettier": "^1.15.3",
+    "prettier-stylelint": "^0.4.2",
+    "stylelint": "^9.9.0",
+    "stylelint-config-idiomatic-order": "^6.2.0",
+    "stylelint-config-prettier": "^4.0.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-config-prettier": "^1.17.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.2.2"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "tslint --fix",
+      "git add"
+    ],
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.css": [
+      "prettier-stylelint --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "bracketSpacing": true,
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "useTabs": false
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-idiomatic-order",
+      "stylelint-config-prettier",
+      "./node_modules/prettier-stylelint/config.js"
+    ],
+    "rules": {
+      "indentation": 2,
+      "string-quotes": "single"
+    }
+  }
+}
