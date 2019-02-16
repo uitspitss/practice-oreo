@@ -1,15 +1,20 @@
-import * as action from 'actions/input';
+import { combineReducers } from 'redux';
+import { reducer as formReducer } from 'redux-form';
 import { reducerWithInitialState } from 'typescript-fsa-reducers';
 
+import * as actions from 'actions/input';
+
 export interface State {
-  text: string;
-  oreoArray: string[];
+  app: {
+    text: string;
+    oreoArray: string[];
+  };
 }
 
-export const initialState: State = { text: '', oreoArray: [] };
+export const initialState: State = { app: { text: '', oreoArray: [] } };
 
 const appReducer = reducerWithInitialState(initialState).case(
-  action.changeText,
+  actions.handleChange,
   (state, payload) => ({
     ...state,
     text: payload.text,
@@ -17,4 +22,9 @@ const appReducer = reducerWithInitialState(initialState).case(
   }),
 );
 
-export default appReducer;
+const rootReducer = combineReducers({
+  app: appReducer,
+  form: formReducer,
+});
+
+export default rootReducer;

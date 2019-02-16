@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { Action } from 'typescript-fsa';
 
-import { changeText, InputTextActionPayload } from 'actions/input';
+import { handleChange, InputTextActionPayload } from 'actions/input';
 import Oreo, { OreoProps } from 'components/Oreo';
 import { State } from 'reducer';
 
@@ -12,12 +12,12 @@ interface StateProps {
 }
 
 interface DispatchProps {
-  changeText: (text: string) => void;
+  handleChange: (text: string) => void;
 }
 
 const mapStateToProps = (state: State): StateProps => ({
-  text: state.text,
-  oreoArray: state.oreoArray,
+  text: state.app.text,
+  oreoArray: state.app.oreoArray,
 });
 
 const mapDispatchToProps = (
@@ -25,8 +25,8 @@ const mapDispatchToProps = (
 ): DispatchProps =>
   bindActionCreators(
     {
-      changeText: (text: string) =>
-        changeText({
+      handleChange: (text: string) =>
+        handleChange({
           text,
           oreoArray: text.match(/(o|re|オ|レ|お|れ)/g),
         }),

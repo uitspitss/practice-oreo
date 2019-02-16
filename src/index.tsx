@@ -3,16 +3,15 @@ import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { compose, createStore } from 'redux';
 
-import appReducer from 'reducer';
+import rootReducer from 'reducer';
 
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 import './index.css';
-import './styles/semantic.min.css';
 
 const store = createStore(
-  appReducer,
+  rootReducer,
   compose(
     process.env.NODE_ENV === 'development' && (window as any).devToolsExtension
       ? (window as any).devToolsExtension()

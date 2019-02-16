@@ -7,4 +7,6 @@ export interface InputTextActionPayload {
 
 const actionCreator = actionCreatorFactory();
 
-export const changeText = actionCreator<InputTextActionPayload>('CHANGE_TEXT');
+export const handleChange = actionCreator<InputTextActionPayload>(
+  'CHANGE_TEXT',
+);
